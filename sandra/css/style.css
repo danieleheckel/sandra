@@ -1,0 +1,26 @@
+body {
+    background-color: #c9a7f8;
+    margin: 2%;
+    padding: 1%;
+}
+
+.começo {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    background-color: #edebf0;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+li {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    color: #343335;
+    margin-bottom: 10px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #343335;
+}
