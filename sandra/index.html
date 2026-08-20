@@ -1,41 +1,258 @@
 <!DOCTYPE html>
-
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
-
-    <title>Casa em Dia</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa em Dia | Organização inteligente para o seu lar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <div class="começo">
-        <h1>Casa em Dia</h1>
-        <p>
-            Organização inteligente para o seu lar. O "Casa em Dia" é um serviço web criado para ajudar 
-pessoas e famílias a organizarem melhor a rotina da casa em um só lugar. A plataforma 
-reúne controle de contas, divisão de tarefas, listas de compras, acompanhamento de 
-gastos e lembretes de manutenção, tornando o dia a dia mais prático, previsível e 
-eficiente. Com uma interface simples e acessível, o serviço foi pensado para quem deseja
-manter a casa em ordem sem depender de anotações soltas, planilhas dispersas ou vários
-aplicativos diferentes.
-        </p>
-        <h2>É um serviço com:</h2>
-        <p>
-            <ul>
-                <li>Controle de contas</li>
-                <li>Divisão de tarefas</li>
-                <li>Listas de compras</li>
-                <li>Acompanhamento de gastos</li>
-                <li>Lembretes de manutenção</li>
-            </ul>
-        </p>
+  <div class="bg-blur blur-1"></div>
+  <div class="bg-blur blur-2"></div>
 
-        <img src="img/propaganda.png" alt="Casa em Dia" class="imagem">
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🏠</span>
+        <span>Casa em Dia</span>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="index.html" class="active">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dashboard.html">Painel</a>
+        <a href="#planos">Planos</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
     </div>
-</body>
+  </header>
 
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="tag">Organização inteligente para o seu lar</span>
+          <h1>
+            Tenha sua casa em ordem com
+            <span class="gradient-text">um único lugar para tudo</span>
+          </h1>
+          <p>
+            O <strong>Casa em Dia</strong> ajuda pessoas e famílias a organizarem a rotina da casa
+            com mais praticidade, previsibilidade e eficiência. Controle contas, tarefas,
+            compras, gastos e manutenção em uma plataforma simples e acessível.
+          </p>
+
+          <div class="hero-actions">
+            <a href="dashboard.html" class="btn btn-primary">Ver demonstração</a>
+            <a href="recursos.html" class="btn btn-secondary">Conhecer recursos</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>+ Controle</strong>
+              <span>contas, tarefas e gastos</span>
+            </div>
+            <div class="stat-card">
+              <strong>+ Praticidade</strong>
+              <span>tudo organizado em um painel</span>
+            </div>
+            <div class="stat-card">
+              <strong>+ Rotina leve</strong>
+              <span>menos esquecimentos e imprevistos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="phone-card float-card">
+            <div class="phone-top">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="phone-content">
+              <div class="mini-box">
+                <p>Contas do mês</p>
+                <strong>6 vencimentos</strong>
+              </div>
+              <div class="mini-box highlight">
+                <p>Compras da semana</p>
+                <strong>12 itens</strong>
+              </div>
+              <div class="mini-box">
+                <p>Tarefas divididas</p>
+                <strong>4 moradores</strong>
+              </div>
+              <div class="mini-chart">
+                <div class="bar" style="height: 55%"></div>
+                <div class="bar" style="height: 85%"></div>
+                <div class="bar" style="height: 65%"></div>
+                <div class="bar" style="height: 95%"></div>
+                <div class="bar" style="height: 72%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-1">Lembretes automáticos</div>
+          <div class="floating-badge badge-2">Gastos mensais</div>
+          <div class="floating-badge badge-3">Tarefas por morador</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="tag">Por que ele faz sentido?</span>
+          <h2>Um serviço criado para resolver uma dor real</h2>
+          <p>
+            Em vez de depender de anotações soltas, planilhas dispersas ou vários aplicativos,
+            o usuário centraliza toda a organização da casa em um só sistema.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="feature-card reveal">
+            <div class="icon-circle">📌</div>
+            <h3>Dor real</h3>
+            <p>Ajuda quem vive esquecendo contas, tarefas e manutenções importantes.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="icon-circle">🔁</div>
+            <h3>Uso recorrente</h3>
+            <p>Ideal para acompanhar a rotina da casa diariamente, semanalmente e mensalmente.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="icon-circle">👨‍👩‍👧‍👦</div>
+            <h3>Público amplo</h3>
+            <p>Serve para pessoas que moram sozinhas, casais, famílias e casas compartilhadas.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="icon-circle">💳</div>
+            <h3>Assinatura mensal</h3>
+            <p>Modelo ideal para uma plataforma útil, contínua e com valor percebido no dia a dia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section">
+      <div class="container two-col">
+        <div>
+          <span class="tag">Diferencial</span>
+          <h2>Mais do que um app de tarefas</h2>
+          <p class="section-text">
+            O <strong>Casa em Dia</strong> une áreas que normalmente ficam espalhadas em vários
+            lugares, trazendo uma experiência centralizada e prática para a organização do lar.
+          </p>
+
+          <ul class="check-list">
+            <li>Finanças da casa</li>
+            <li>Rotina doméstica</li>
+            <li>Manutenção preventiva</li>
+            <li>Organização familiar</li>
+          </ul>
+        </div>
+
+        <div class="differential-card reveal">
+          <div class="differential-item">
+            <span>💰</span>
+            <div>
+              <strong>Finanças</strong>
+              <p>Contas, vencimentos e acompanhamento de gastos.</p>
+            </div>
+          </div>
+          <div class="differential-item">
+            <span>🧹</span>
+            <div>
+              <strong>Rotina</strong>
+              <p>Divisão de tarefas e acompanhamento das atividades domésticas.</p>
+            </div>
+          </div>
+          <div class="differential-item">
+            <span>🛠️</span>
+            <div>
+              <strong>Manutenção</strong>
+              <p>Lembretes para trocas, revisões e cuidados preventivos da casa.</p>
+            </div>
+          </div>
+          <div class="differential-item">
+            <span>🛒</span>
+            <div>
+              <strong>Compras</strong>
+              <p>Listas compartilhadas para deixar a rotina mais organizada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planos">
+      <div class="container">
+        <div class="section-title">
+          <span class="tag">Modelo de negócio</span>
+          <h2>Plano simples, valor recorrente</h2>
+          <p>
+            Uma plataforma útil no dia a dia, com proposta ideal para assinatura mensal.
+          </p>
+        </div>
+
+        <div class="pricing-card reveal">
+          <div class="pricing-left">
+            <span class="small-label">Plano Premium</span>
+            <h3>Organização completa da casa em um só lugar</h3>
+            <p>
+              Ideal para quem quer acompanhar contas, compras, tarefas, lembretes e gastos com mais controle.
+            </p>
+          </div>
+
+          <div class="pricing-right">
+            <div class="price">
+              <span>R$</span>
+              <strong>19,90</strong>
+              <small>/mês</small>
+            </div>
+            <a href="#" class="btn btn-primary">Começar agora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container cta-box">
+        <div>
+          <span class="tag">Comece hoje</span>
+          <h2>Transforme a rotina da sua casa em algo leve e organizado</h2>
+          <p>
+            Menos improviso, menos esquecimentos e mais clareza no dia a dia.
+          </p>
+        </div>
+        <a href="dashboard.html" class="btn btn-light">Explorar painel</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Casa em Dia</h3>
+        <p>Organização inteligente para o seu lar.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dashboard.html">Painel</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/jscript.js"></script>
+</body>
 </html>

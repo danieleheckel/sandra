@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa em Dia | Painel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="bg-blur blur-1"></div>
+  <div class="bg-blur blur-2"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🏠</span>
+        <span>Casa em Dia</span>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="index.html">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dashboard.html" class="active">Painel</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <main class="page-top">
+    <section class="section">
+      <div class="container">
+        <div class="dashboard-header">
+          <div>
+            <span class="tag">Painel simples e organizado</span>
+            <h1>Visão geral da casa</h1>
+            <p>
+              Um exemplo visual de como o usuário poderia acompanhar contas, tarefas, compras e gastos.
+            </p>
+          </div>
+
+          <button class="btn btn-primary" id="simulateBtn">Simular atualização</button>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="dashboard-card card-large reveal">
+            <div class="card-head">
+              <h3>Resumo do mês</h3>
+              <span class="badge-soft">Atualizado hoje</span>
+            </div>
+
+            <div class="kpi-grid">
+              <div class="kpi-box">
+                <span>Contas pendentes</span>
+                <strong id="contasValor">6</strong>
+              </div>
+              <div class="kpi-box">
+                <span>Tarefas abertas</span>
+                <strong id="tarefasValor">14</strong>
+              </div>
+              <div class="kpi-box">
+                <span>Gasto do mês</span>
+                <strong id="gastoValor">R$ 2.480</strong>
+              </div>
+              <div class="kpi-box">
+                <span>Manutenções</span>
+                <strong id="manutencaoValor">3</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-card reveal">
+            <div class="card-head">
+              <h3>Próximas contas</h3>
+            </div>
+            <ul class="list-clean">
+              <li>
+                <span>Energia</span>
+                <strong>12/08</strong>
+              </li>
+              <li>
+                <span>Internet</span>
+                <strong>15/08</strong>
+              </li>
+              <li>
+                <span>Água</span>
+                <strong>18/08</strong>
+              </li>
+              <li>
+                <span>Condomínio</span>
+                <strong>20/08</strong>
+              </li>
+            </ul>
+          </div>
+
+          <div class="dashboard-card reveal">
+            <div class="card-head">
+              <h3>Compras da semana</h3>
+            </div>
+            <ul class="check-items">
+              <li><input type="checkbox"> Arroz</li>
+              <li><input type="checkbox"> Sabão em pó</li>
+              <li><input type="checkbox"> Frutas</li>
+              <li><input type="checkbox"> Papel higiênico</li>
+            </ul>
+          </div>
+
+          <div class="dashboard-card reveal">
+            <div class="card-head">
+              <h3>Divisão de tarefas</h3>
+            </div>
+            <div class="task-people">
+              <div class="person-task">
+                <span class="avatar lilac-1">A</span>
+                <div>
+                  <strong>Ana</strong>
+                  <p>Cozinha e compras</p>
+                </div>
+              </div>
+
+              <div class="person-task">
+                <span class="avatar lilac-2">B</span>
+                <div>
+                  <strong>Bruno</strong>
+                  <p>Lixo e contas</p>
+                </div>
+              </div>
+
+              <div class="person-task">
+                <span class="avatar lilac-3">C</span>
+                <div>
+                  <strong>Clara</strong>
+                  <p>Lavanderia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-card card-large reveal">
+            <div class="card-head">
+              <h3>Gastos mensais</h3>
+              <span class="badge-soft">Visão simplificada</span>
+            </div>
+
+            <div class="chart-box">
+              <div class="chart-bar-wrap">
+                <div class="chart-label">Moradia</div>
+                <div class="chart-track"><div class="chart-bar" style="width: 88%"></div></div>
+              </div>
+
+              <div class="chart-bar-wrap">
+                <div class="chart-label">Mercado</div>
+                <div class="chart-track"><div class="chart-bar" style="width: 64%"></div></div>
+              </div>
+
+              <div class="chart-bar-wrap">
+                <div class="chart-label">Contas</div>
+                <div class="chart-track"><div class="chart-bar" style="width: 72%"></div></div>
+              </div>
+
+              <div class="chart-bar-wrap">
+                <div class="chart-label">Manutenção</div>
+                <div class="chart-track"><div class="chart-bar" style="width: 35%"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-card reveal">
+            <div class="card-head">
+              <h3>Manutenção preventiva</h3>
+            </div>
+            <ul class="list-clean">
+              <li>
+                <span>Filtro da água</span>
+                <strong>Em 5 dias</strong>
+              </li>
+              <li>
+                <span>Limpeza do ar-condicionado</span>
+                <strong>Em 12 dias</strong>
+              </li>
+              <li>
+                <span>Revisão elétrica</span>
+                <strong>Este mês</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Casa em Dia</h3>
+        <p>Organização inteligente para o seu lar.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dashboard.html">Painel</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
