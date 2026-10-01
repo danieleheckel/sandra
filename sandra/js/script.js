@@ -42,3 +42,37 @@ if (simulateBtn) {
     simulateBtn.disabled = true;
   });
 }
+
+const btnConsultar = document.getElementById("btnConsultar");
+const servico = document.getElementById("servico");
+const resultado = document.getElementById("resultado");
+
+btnConsultar.addEventListener("click", () => {
+  if (servico.value === "") {
+    resultado.textContent = "Selecione um serviço antes de consultar.";
+    return;
+  }
+  resultado.textContent = "Orientação para: " + servico.options[servico.selectedIndex].text;
+});
+
+if (menuToggle && menu) {
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("open");
+  });
+}
+
+btnConsultar.addEventListener("click", () => {
+  const escolha = campoServico.value;
+
+  if (escolha === "") {
+    resultado.textContent = "Escolha um serviço antes de consultar.";
+  } else if (escolha === "agendamento") {
+    resultado.textContent = "O agendamento pode ser solicitado pelo portal.";
+  } else if (escolha === "documentos") {
+    resultado.textContent = "Confira os documentos necessários antes de solicitar.";
+  } else if (escolha === "atendimento") {
+    resultado.textContent = "Consulte os horários disponíveis para atendimento.";
+  } else {
+    resultado.textContent = "Serviço não identificado.";
+  }
+});
