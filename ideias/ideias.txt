@@ -1,0 +1,30 @@
+Casa em Dia: 
+organização inteligente para o seu lar. O Casa em Dia é um serviço web criado para ajudar 
+pessoas e famílias a organizarem melhor a rotina da casa em um só lugar. A plataforma 
+reúne controle de contas, divisão de tarefas, listas de compras, acompanhamento de 
+gastos e lembretes de manutenção, tornando o dia a dia mais prático, previsível e 
+eficiente. Com uma interface simples e acessível, o serviço foi pensado para quem deseja
+manter a casa em ordem sem depender de anotações soltas, planilhas dispersas ou vários
+aplicativos diferentes.
+
+é um serviço com:
+dor real
+uso recorrente
+público amplo
+possibilidade de assinatura mensal
+
+Diferencial
+Em vez de ser só mais um app de tarefas, ele junta:
+finanças da casa
+rotina doméstica
+manutenção preventiva
+organização familiar
+
+Como funcionaria
+O usuário cria uma conta e consegue:
+registrar contas com vencimento
+receber lembretes de pagamento e manutenção
+montar listas de compras
+dividir tarefas entre moradores da casa
+acompanhar gastos mensais
+ver um painel simples com tudo organizado

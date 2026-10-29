@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa em Dia | Agendamento</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/paginas.css" />
+</head>
+<body data-page="agendamento">
+  <div class="bg-blur blur-1"></div>
+  <div class="bg-blur blur-2"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🏠</span>
+        <span>Casa em Dia</span>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="index.html">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dashboard.html">Painel</a>
+
+        <div class="dropdown">
+          <button class="drop-btn" id="dropToggle" aria-expanded="false">
+            Serviços <span class="arrow">▾</span>
+          </button>
+          <div class="dropdown-content" id="dropMenu">
+            <a href="agendamento.html" class="active">📅 Agendamento</a>
+            <a href="documentos.html">📄 Documentos</a>
+            <a href="faq.html">💬 Atendimento</a>
+          </div>
+        </div>
+
+        <a href="index.html#planos">Planos</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <main class="page-top">
+    <section class="section">
+      <div class="container">
+
+        <div class="section-title">
+          <span class="tag">Painel do morador</span>
+          <h1>Agende o uso do sistema</h1>
+          <p>Escolha o tipo de atendimento, a data e um horário livre. Cada horário aceita apenas um agendamento.</p>
+        </div>
+
+        <nav class="cd-tabs" aria-label="Telas do sistema">
+          <a href="agendamento.html" class="cd-tab active">📅 Agendamento</a>
+          <a href="documentos.html" class="cd-tab">📄 Documentos</a>
+          <a href="faq.html" class="cd-tab">❓ Perguntas frequentes</a>
+        </nav>
+
+        <div class="cd-mini-grid cd-mini-grid-2">
+          <div class="cd-mini">
+            <div class="cd-mini-k">📅 Agendamentos</div>
+            <div class="cd-mini-v" id="agTotal">0</div>
+            <div class="cd-mini-d">no seu histórico</div>
+          </div>
+          <div class="cd-mini">
+            <div class="cd-mini-k">⏱ Próximo</div>
+            <div class="cd-mini-v" id="agNext">—</div>
+            <div class="cd-mini-d" id="agNextInfo">nenhum agendamento</div>
+          </div>
+        </div>
+
+        <div class="cd-split">
+
+          <form class="cd-card cd-pad" id="agForm" novalidate>
+            <h3 class="cd-card-title">Novo agendamento</h3>
+            <p class="cd-card-sub">Preencha os dados de contato e escolha o horário.</p>
+
+            <div class="cd-field">
+              <label for="agName">Nome completo <span class="cd-req">*</span></label>
+              <input id="agName" type="text" autocomplete="name" placeholder="Como podemos te chamar" />
+              <span class="cd-err" id="errName" role="alert"></span>
+            </div>
+
+            <div class="cd-row">
+              <div class="cd-field">
+                <label for="agEmail">E-mail <span class="cd-req">*</span></label>
+                <input id="agEmail" type="email" autocomplete="email" placeholder="voce@email.com" />
+                <span class="cd-err" id="errEmail" role="alert"></span>
+              </div>
+              <div class="cd-field">
+                <label for="agPhone">WhatsApp <span class="cd-req">*</span></label>
+                <input id="agPhone" type="tel" autocomplete="tel" placeholder="(11) 90000-0000" />
+                <span class="cd-err" id="errPhone" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="cd-field">
+              <label for="agType">Tipo de atendimento</label>
+              <select id="agType">
+                <option value="Demonstração guiada">Demonstração guiada</option>
+                <option value="Suporte técnico">Suporte técnico</option>
+                <option value="Ajuda para configurar a casa">Ajuda para configurar a casa</option>
+                <option value="Reunião de acompanhamento">Reunião de acompanhamento</option>
+              </select>
+            </div>
+
+            <div class="cd-row">
+              <div class="cd-field">
+                <label for="agDate">Data <span class="cd-req">*</span></label>
+                <input id="agDate" type="date" />
+                <span class="cd-err" id="errDate" role="alert"></span>
+              </div>
+              <div class="cd-field">
+                <label for="agTime">Horário <span class="cd-req">*</span></label>
+                <select id="agTime"><option value="">Selecione</option></select>
+                <span class="cd-err" id="errTime" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="cd-row">
+              <div class="cd-field">
+                <label for="agPeople">Moradores da casa</label>
+                <input id="agPeople" type="number" min="1" max="20" value="2" />
+              </div>
+              <div class="cd-field">
+                <label for="agNotes">Observações</label>
+                <input id="agNotes" type="text" placeholder="Opcional" />
+              </div>
+            </div>
+
+            <button class="btn btn-primary cd-block" type="submit">Confirmar agendamento</button>
+          </form>
+
+          <div class="cd-card cd-pad">
+            <h3 class="cd-card-title">Meus agendamentos</h3>
+            <p class="cd-card-sub">Os mais recentes aparecem primeiro.</p>
+            <div id="agList"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Casa em Dia</h3>
+        <p>Organização inteligente para o seu lar.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dashboard.html">Painel</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/paginas.js"></script>
+</body>
+</html>

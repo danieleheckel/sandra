@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa em Dia | Perguntas frequentes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/paginas.css" />
+</head>
+<body data-page="faq">
+  <div class="bg-blur blur-1"></div>
+  <div class="bg-blur blur-2"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🏠</span>
+        <span>Casa em Dia</span>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="index.html">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dashboard.html">Painel</a>
+
+        <div class="dropdown">
+          <button class="drop-btn" id="dropToggle" aria-expanded="false">
+            Serviços <span class="arrow">▾</span>
+          </button>
+          <div class="dropdown-content" id="dropMenu">
+            <a href="agendamento.html">📅 Agendamento</a>
+            <a href="documentos.html">📄 Documentos</a>
+            <a href="faq.html" class="active">💬 Atendimento</a>
+          </div>
+        </div>
+
+        <a href="index.html#planos">Planos</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <main class="page-top">
+    <section class="section">
+      <div class="container">
+
+        <div class="section-title">
+          <span class="tag">Dúvidas frequentes</span>
+          <h1>Perguntas sobre o sistema</h1>
+          <p>Busque por uma palavra-chave ou abra as perguntas abaixo para entender como o Casa em Dia funciona.</p>
+        </div>
+
+        <nav class="cd-tabs" aria-label="Telas do sistema">
+          <a href="agendamento.html" class="cd-tab">📅 Agendamento</a>
+          <a href="documentos.html" class="cd-tab">📄 Documentos</a>
+          <a href="faq.html" class="cd-tab active">❓ Perguntas frequentes</a>
+        </nav>
+
+        <div class="cd-search">
+          <span class="cd-search-ico" aria-hidden="true">🔍</span>
+          <input type="search" id="faqSearch" placeholder="Buscar uma dúvida…" aria-label="Buscar perguntas" />
+        </div>
+
+        <div id="faqList"></div>
+
+        <div class="cd-contact">
+          <h3>Não encontrou sua resposta?</h3>
+          <p>Fale com o atendimento e a gente resolve junto — o retorno chega pelo WhatsApp informado.</p>
+          <a class="btn btn-primary" href="agendamento.html">Falar com o atendimento</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Casa em Dia</h3>
+        <p>Organização inteligente para o seu lar.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dashboard.html">Painel</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/paginas.js"></script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa em Dia | Documentos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/paginas.css" />
+</head>
+<body data-page="documentos">
+  <div class="bg-blur blur-1"></div>
+  <div class="bg-blur blur-2"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🏠</span>
+        <span>Casa em Dia</span>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="index.html">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dashboard.html">Painel</a>
+
+        <div class="dropdown">
+          <button class="drop-btn" id="dropToggle" aria-expanded="false">
+            Serviços <span class="arrow">▾</span>
+          </button>
+          <div class="dropdown-content" id="dropMenu">
+            <a href="agendamento.html">📅 Agendamento</a>
+            <a href="documentos.html" class="active">📄 Documentos</a>
+            <a href="faq.html">💬 Atendimento</a>
+          </div>
+        </div>
+
+        <a href="index.html#planos">Planos</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </header>
+
+  <main class="page-top">
+    <section class="section">
+      <div class="container">
+
+        <div class="section-title">
+          <span class="tag">Documentos da casa</span>
+          <h1>Listas, contas, compromissos e tarefas</h1>
+          <p>Tudo o que a casa precisa acompanhar, salvo no seu dispositivo e pronto para consultar a qualquer momento.</p>
+        </div>
+
+        <nav class="cd-tabs" aria-label="Telas do sistema">
+          <a href="agendamento.html" class="cd-tab">📅 Agendamento</a>
+          <a href="documentos.html" class="cd-tab active">📄 Documentos</a>
+          <a href="faq.html" class="cd-tab">❓ Perguntas frequentes</a>
+        </nav>
+
+        <div class="cd-mini-grid" id="docSummary"></div>
+
+        <div class="cd-grid2">
+
+          <!-- Lista de compras -->
+          <article class="cd-card cd-pad">
+            <div class="cd-card-head">
+              <span class="cd-ico">🛒</span>
+              <div>
+                <h3 class="cd-card-title">Lista de compras</h3>
+                <p class="cd-card-sub">O que falta comprar nesta semana</p>
+              </div>
+            </div>
+            <div class="cd-prog"><span id="progLista"></span></div>
+            <div class="cd-count" id="cntLista">0 de 0 comprados</div>
+
+            <form class="cd-add" id="formLista">
+              <input type="text" id="inputLista" placeholder="Adicionar item…" aria-label="Nome do item" />
+              <input type="number" id="inputQtd" class="cd-qty" value="1" min="1" aria-label="Quantidade" />
+              <button class="btn btn-secondary cd-btn-sm" type="submit">+</button>
+            </form>
+
+            <ul class="cd-items" id="listShopping"></ul>
+            <div class="cd-foot">
+              <button type="button" class="cd-link" data-clear="shopping">Limpar concluídos</button>
+            </div>
+          </article>
+
+          <!-- Contas a pagar -->
+          <article class="cd-card cd-pad">
+            <div class="cd-card-head">
+              <span class="cd-ico">💸</span>
+              <div>
+                <h3 class="cd-card-title">Contas a pagar</h3>
+                <p class="cd-card-sub">Vencimentos e valores do mês</p>
+              </div>
+            </div>
+            <div class="cd-prog"><span id="progBills"></span></div>
+            <div class="cd-count" id="cntBills">0 de 0 pagas</div>
+
+            <form class="cd-add" id="formBills">
+              <input type="text" id="inputBill" placeholder="Descrição (ex: Luz)" aria-label="Descrição da conta" />
+              <input type="number" id="inputAmount" step="0.01" min="0" placeholder="R$" aria-label="Valor" class="cd-amount" />
+              <input type="date" id="inputDue" aria-label="Vencimento" class="cd-date" />
+              <button class="btn btn-secondary cd-btn-sm" type="submit">+</button>
+            </form>
+
+            <ul class="cd-items" id="listBills"></ul>
+            <div class="cd-foot">
+              <button type="button" class="cd-link" data-clear="bills">Limpar concluídos</button>
+            </div>
+          </article>
+
+          <!-- Compromissos -->
+          <article class="cd-card cd-pad">
+            <div class="cd-card-head">
+              <span class="cd-ico">📌</span>
+              <div>
+                <h3 class="cd-card-title">Compromissos importantes</h3>
+                <p class="cd-card-sub">Agenda da casa em ordem de data</p>
+              </div>
+            </div>
+            <div class="cd-prog"><span id="progAppts"></span></div>
+            <div class="cd-count" id="cntAppts">0 de 0 concluídos</div>
+
+            <form class="cd-add" id="formAppts">
+              <input type="text" id="inputAppt" placeholder="Ex: Vistoria do gás" aria-label="Título do compromisso" />
+              <input type="date" id="inputApptDate" aria-label="Data" class="cd-date" />
+              <input type="time" id="inputApptTime" aria-label="Hora" class="cd-time" />
+              <button class="btn btn-secondary cd-btn-sm" type="submit">+</button>
+            </form>
+
+            <ul class="cd-items" id="listAppts"></ul>
+            <div class="cd-foot">
+              <button type="button" class="cd-link" data-clear="appts">Limpar concluídos</button>
+            </div>
+          </article>
+
+          <!-- Tarefas semanais -->
+          <article class="cd-card cd-pad">
+            <div class="cd-card-head">
+              <span class="cd-ico">✅</span>
+              <div>
+                <h3 class="cd-card-title">Tarefas semanais</h3>
+                <p class="cd-card-sub">Divididas por dia da semana</p>
+              </div>
+            </div>
+            <div class="cd-prog"><span id="progTasks"></span></div>
+            <div class="cd-count" id="cntTasks">0 de 0 feitas</div>
+
+            <form class="cd-add" id="formTasks">
+              <input type="text" id="inputTask" placeholder="Ex: Trocar a roupa de cama" aria-label="Título da tarefa" />
+              <select id="inputDay" aria-label="Dia da semana" class="cd-day-select">
+                <option value="1">Segunda</option>
+                <option value="2">Terça</option>
+                <option value="3">Quarta</option>
+                <option value="4">Quinta</option>
+                <option value="5">Sexta</option>
+                <option value="6">Sábado</option>
+                <option value="0">Domingo</option>
+              </select>
+              <button class="btn btn-secondary cd-btn-sm" type="submit">+</button>
+            </form>
+
+            <ul class="cd-items" id="listTasks"></ul>
+            <div class="cd-foot">
+              <button type="button" class="cd-link" data-clear="tasks">Limpar concluídos</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Casa em Dia</h3>
+        <p>Organização inteligente para o seu lar.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dashboard.html">Painel</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/paginas.js"></script>
+</body>
+</html>

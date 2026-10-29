@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Casa em Dia centraliza contas, listas de compras, compromissos e tarefas da casa em um só painel. Agende o uso do sistema e organize a rotina do lar.">
+  <meta name="theme-color" content="#7c5cff">
+  <title>Casa em Dia | Organização inteligente para o seu lar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Apenas os componentes novos desta página -->
+  <style>
+    .quick-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:820px){.quick-grid{grid-template-columns:repeat(3,1fr)}}
+
+    .quick-card{
+      display:flex;flex-direction:column;gap:10px;height:100%;
+      text-decoration:none;color:inherit;background:#fff;
+      border:1px solid #eceef6;border-radius:20px;padding:22px;
+      box-shadow:0 1px 2px rgba(16,24,40,.04);
+      transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+    .quick-card:hover{
+      transform:translateY(-3px);border-color:#d9d2ff;
+      box-shadow:0 18px 40px -26px rgba(76,64,190,.55);
+    }
+    .quick-ico{
+      width:44px;height:44px;border-radius:14px;display:grid;place-items:center;
+      font-size:20px;background:#f3f4f9;border:1px solid #eceef6;
+    }
+    .quick-card h3{margin:0;font-size:1.02rem}
+    .quick-card p{margin:0;font-size:.875rem;color:#6b7280;line-height:1.6}
+    .quick-card ul{margin:0;padding-left:17px;font-size:.83rem;color:#6b7280;line-height:1.7}
+    .quick-go{
+      margin-top:auto;display:inline-flex;align-items:center;gap:6px;
+      font-size:.82rem;font-weight:700;color:#7c5cff;transition:gap .2s ease;
+    }
+    .quick-card:hover .quick-go{gap:11px}
+    .quick-pill{
+      display:inline-flex;align-items:center;gap:6px;width:fit-content;
+      font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+      padding:3px 9px;border-radius:999px;background:#f1edff;color:#5b3df0;
+    }
+
+    .footer-cols{display:flex;gap:46px;flex-wrap:wrap}
+    .footer-col{display:flex;flex-direction:column;gap:8px}
+    .footer-col h4{
+      margin:0 0 2px;font-size:.74rem;font-weight:700;letter-spacing:.09em;
+      text-transform:uppercase;color:#8d93a6;
+    }
+    .footer-col a{color:#6b7280;text-decoration:none;font-size:.85rem}
+    .footer-col a:hover{color:#14161f}
+    .hero-note{
+      display:inline-flex;align-items:center;gap:8px;margin-top:14px;
+      font-size:.82rem;color:#6b7280;text-decoration:none;
+    }
+    .hero-note:hover{color:#14161f}
+    .hero-note strong{color:#7c5cff}
+  </style>
+</head>
+
+<body>
+  <div class="bg-blur blur-1"></div>
+  <div class="bg-blur blur-2"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">🏠</span>
+        <span>Casa em Dia</span>
+      </a>
+
+      <nav class="menu" id="menu">
+        <a href="index.html" class="active">Início</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="dashboard.html">Painel</a>
+
+        <div class="dropdown">
+          <button class="drop-btn" id="dropToggle" aria-expanded="false">
+            Serviços <span class="arrow">▾</span>
+          </button>
+          <div class="dropdown-content" id="dropMenu">
+            <a href="agendamento.html">📅 Agendamento</a>
+            <a href="documentos.html">📄 Documentos</a>
+            <a href="faq.html">💬 Atendimento</a>
+          </div>
+        </div>
+
+        <a href="#planos">Planos</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="tag">Organização inteligente para o seu lar</span>
+          <h1>
+            Tenha sua casa em ordem com
+            <span class="gradient-text">um único lugar para tudo</span>
+          </h1>
+          <p>
+            O <strong>Casa em Dia</strong> ajuda pessoas e famílias a organizarem a rotina da casa
+            com mais praticidade, previsibilidade e eficiência. Controle contas, tarefas,
+            compras, gastos e manutenção em uma plataforma simples e acessível.
+          </p>
+
+          <div class="hero-actions">
+            <a href="agendamento.html" class="btn btn-primary">Agendar demonstração</a>
+            <a href="documentos.html" class="btn btn-secondary">Ver documentos</a>
+          </div>
+
+          <a href="faq.html" class="hero-note">
+            <strong>Novo:</strong> tire dúvidas nas perguntas frequentes →
+          </a>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>+ Controle</strong>
+              <span>contas, tarefas e gastos</span>
+            </div>
+            <div class="stat-card">
+              <strong>+ Praticidade</strong>
+              <span>tudo organizado em um painel</span>
+            </div>
+            <div class="stat-card">
+              <strong>+ Rotina leve</strong>
+              <span>menos esquecimentos e imprevistos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="phone-card float-card">
+            <div class="phone-top">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="phone-content">
+              <div class="mini-box">
+                <p>Contas do mês</p>
+                <strong>6 vencimentos</strong>
+              </div>
+              <div class="mini-box highlight">
+                <p>Compras da semana</p>
+                <strong>12 itens</strong>
+              </div>
+              <div class="mini-box">
+                <p>Tarefas divididas</p>
+                <strong>4 moradores</strong>
+              </div>
+              <div class="mini-chart">
+                <div class="bar" style="height: 55%"></div>
+                <div class="bar" style="height: 85%"></div>
+                <div class="bar" style="height: 65%"></div>
+                <div class="bar" style="height: 95%"></div>
+                <div class="bar" style="height: 72%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-1">Lembretes automáticos</div>
+          <div class="floating-badge badge-2">Gastos mensais</div>
+          <div class="floating-badge badge-3">Tarefas por morador</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== acesso rápido às novas telas ===== -->
+    <section class="section" id="acesso-rapido">
+      <div class="container">
+        <div class="section-title">
+          <span class="tag">Acesso rápido</span>
+          <h2>Comece pelo que você precisa agora</h2>
+          <p>
+            Agende o uso do sistema, organize os documentos da casa ou consulte as dúvidas
+            mais comuns — tudo a um clique do início.
+          </p>
+        </div>
+
+        <div class="quick-grid">
+          <a href="agendamento.html" class="quick-card reveal">
+            <span class="quick-ico">📅</span>
+            <span class="quick-pill">Atendimento</span>
+            <h3>Agendamento</h3>
+            <p>Escolha o tipo de atendimento, a data e um horário livre. Cada horário aceita um agendamento por vez.</p>
+            <ul>
+              <li>Demonstração guiada gratuita</li>
+              <li>Suporte e configuração da casa</li>
+              <li>Protocolo e cancelamento na hora</li>
+            </ul>
+            <span class="quick-go">Abrir agendamento →</span>
+          </a>
+
+          <a href="documentos.html" class="quick-card reveal">
+            <span class="quick-ico">📄</span>
+            <span class="quick-pill">Organização</span>
+            <h3>Documentos da casa</h3>
+            <p>Quatro blocos para a rotina do lar, com contadores e progresso de cada lista.</p>
+            <ul>
+              <li>Lista de compras com quantidade</li>
+              <li>Contas a pagar com vencimento</li>
+              <li>Compromissos e tarefas semanais</li>
+            </ul>
+            <span class="quick-go">Abrir documentos →</span>
+          </a>
+
+          <a href="faq.html" class="quick-card reveal">
+            <span class="quick-ico">❓</span>
+            <span class="quick-pill">Dúvidas</span>
+            <h3>Perguntas frequentes</h3>
+            <p>Dez respostas sobre planos, segurança dos dados, lembretes e uso no celular.</p>
+            <ul>
+              <li>Busca por palavra-chave</li>
+              <li>Respostas curtas e diretas</li>
+              <li>Atalho para falar com o atendimento</li>
+            </ul>
+            <span class="quick-go">Abrir perguntas →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="tag">Por que ele faz sentido?</span>
+          <h2>Um serviço criado para resolver uma dor real</h2>
+          <p>
+            Em vez de depender de anotações soltas, planilhas dispersas ou vários aplicativos,
+            o usuário centraliza toda a organização da casa em um só sistema.
+          </p>
+        </div>
+
+        <div class="grid-4">
+          <article class="feature-card reveal">
+            <div class="icon-circle">📌</div>
+            <h3>Dor real</h3>
+            <p>Ajuda quem vive esquecendo contas, tarefas e manutenções importantes.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="icon-circle">🔁</div>
+            <h3>Uso recorrente</h3>
+            <p>Ideal para acompanhar a rotina da casa diariamente, semanalmente e mensalmente.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="icon-circle">👨‍👩‍👧‍👦</div>
+            <h3>Público amplo</h3>
+            <p>Serve para pessoas que moram sozinhas, casais, famílias e casas compartilhadas.</p>
+          </article>
+
+          <article class="feature-card reveal">
+            <div class="icon-circle">💳</div>
+            <h3>Assinatura mensal</h3>
+            <p>Modelo ideal para uma plataforma útil, contínua e com valor percebido no dia a dia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt-section">
+      <div class="container two-col">
+        <div>
+          <span class="tag">Diferencial</span>
+          <h2>Mais do que um app de tarefas</h2>
+          <p class="section-text">
+            O <strong>Casa em Dia</strong> une áreas que normalmente ficam espalhadas em vários
+            lugares, trazendo uma experiência centralizada e prática para a organização do lar.
+          </p>
+
+          <ul class="check-list">
+            <li>Finanças da casa</li>
+            <li>Rotina doméstica</li>
+            <li>Manutenção preventiva</li>
+            <li>Organização familiar</li>
+          </ul>
+        </div>
+
+        <div class="differential-card reveal">
+          <div class="differential-item">
+            <span>💰</span>
+            <div>
+              <strong>Finanças</strong>
+              <p>Contas, vencimentos e acompanhamento de gastos.</p>
+            </div>
+          </div>
+          <div class="differential-item">
+            <span>🧹</span>
+            <div>
+              <strong>Rotina</strong>
+              <p>Divisão de tarefas e acompanhamento das atividades domésticas.</p>
+            </div>
+          </div>
+          <div class="differential-item">
+            <span>🛠️</span>
+            <div>
+              <strong>Manutenção</strong>
+              <p>Lembretes para trocas, revisões e cuidados preventivos da casa.</p>
+            </div>
+          </div>
+          <div class="differential-item">
+            <span>🛒</span>
+            <div>
+              <strong>Compras</strong>
+              <p>Listas compartilhadas para deixar a rotina mais organizada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planos">
+      <div class="container">
+        <div class="section-title">
+          <span class="tag">Modelo de negócio</span>
+          <h2>Plano simples, valor recorrente</h2>
+          <p>
+            Uma plataforma útil no dia a dia, com proposta ideal para assinatura mensal.
+          </p>
+        </div>
+
+        <div class="pricing-card reveal">
+          <div class="pricing-left">
+            <span class="small-label">Plano Premium</span>
+            <h3>Organização completa da casa em um só lugar</h3>
+            <p>
+              Ideal para quem quer acompanhar contas, compras, tarefas, lembretes e gastos com mais controle.
+            </p>
+          </div>
+
+          <div class="pricing-right">
+            <div class="price">
+              <span>R$</span>
+              <strong>19,90</strong>
+              <small>/mês</small>
+            </div>
+            <a href="agendamento.html" class="btn btn-primary">Começar agora</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="consulta-servico">
+          <h2>Consulte um serviço</h2>
+
+          <label for="servico">Escolha um serviço:</label>
+          <select id="servico">
+            <option value="">Selecione...</option>
+            <option value="agendamento">Agendamento</option>
+            <option value="documentos">Documentos</option>
+            <option value="atendimento">Atendimento</option>
+          </select>
+
+          <button id="btnConsultar" type="button">Abrir serviço</button>
+
+          <p id="resultado" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container cta-box">
+        <div>
+          <span class="tag">Comece hoje</span>
+          <h2>Transforme a rotina da sua casa em algo leve e organizado</h2>
+          <p>
+            Menos improviso, menos esquecimentos e mais clareza no dia a dia.
+          </p>
+        </div>
+        <a href="dashboard.html" class="btn btn-light">Explorar painel</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div>
+        <h3>Casa em Dia</h3>
+        <p>Organização inteligente para o seu lar.</p>
+      </div>
+
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Navegar</h4>
+          <a href="index.html">Início</a>
+          <a href="recursos.html">Recursos</a>
+          <a href="dashboard.html">Painel</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <a href="agendamento.html">Agendamento</a>
+          <a href="documentos.html">Documentos</a>
+          <a href="faq.html">Perguntas frequentes</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+
+  <!-- Navegação da consulta de serviço (não depende de alterar o script.js) -->
+  <script>
+    (function () {
+      var destinos = {
+        agendamento: 'agendamento.html',
+        documentos: 'documentos.html',
+        atendimento: 'faq.html'
+      };
+
+      var guias = {
+        agendamento: 'Abrindo o agendamento para você escolher data e horário.',
+        documentos: 'Abrindo os documentos da casa: compras, contas, compromissos e tarefas.',
+        atendimento: 'Abrindo as perguntas frequentes com atalho para o atendimento.'
+      };
+
+      var select = document.getElementById('servico');
+      var botao = document.getElementById('btnConsultar');
+      var saida = document.getElementById('resultado');
+      if (!select || !botao) return;
+
+      botao.addEventListener('click', function () {
+        var valor = select.value;
+
+        if (!valor) {
+          if (saida) saida.textContent = 'Escolha um serviço para continuar.';
+          select.focus();
+          return;
+        }
+
+        if (saida) saida.textContent = guias[valor];
+        setTimeout(function () {
+          window.location.href = destinos[valor];
+        }, 500);
+      });
+    })();
+  </script>
+</body>
+</html>
