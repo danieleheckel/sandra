@@ -131,6 +131,17 @@ button {
   color: var(--primary-dark);
 }
 
+.menu a.login-nav-link {
+  padding: 9px 14px;
+  border-radius: 12px;
+  background: var(--secondary);
+  color: var(--primary-dark);
+}
+
+.menu a.login-nav-link::after {
+  display: none;
+}
+
 .menu a.active::after,
 .menu a:hover::after {
   content: "";
